@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
 
+// @Component({
+//   selector: 'app-root',
+//   templateUrl: './app.component.html',
+//   styleUrls: ['./app.component.scss']
+// })
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,5 +18,5 @@ export class AppComponent {
     { path: '/courses', icon: 'view_list', title: 'Courses' },
   ];
 
-  constructor() {}
+  constructor() { }
 }
