@@ -15,9 +15,12 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 @NgModule({
   exports: [
+    MatProgressBarModule,
     MatButtonModule,
     MatCardModule,
     MatCheckboxModule,
@@ -36,4 +39,4 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonToggleModule
   ]
 })
-export class MaterialModule {}
+export class MaterialModule { }
