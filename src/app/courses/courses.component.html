@@ -14,10 +14,10 @@
               {{ course.title }}
             </h3>
             <p matLine>{{ course.description }}</p>
-            <mat-progress-bar
+            <!-- <mat-progress-bar
               matLine
               value="{{ course.percentComplete }}"
-            ></mat-progress-bar>
+            ></mat-progress-bar> -->
             <button
               mat-icon-button
               color="warn"
@@ -38,23 +38,44 @@
       <mat-card-header>
         <mat-card-title> Select Course </mat-card-title>
       </mat-card-header>
-      <form #form="ngForm">
+      <form #form="ngForm" (submit)="saveCourse()">
         <mat-card-content>
           <mat-form-field>
             <input
               class="full-width"
-              mat-input
+              matInput
               [(ngModel)]="currentCourse.title"
               type="text"
               name="title"
-              placeholser="title"
+              placeholder="title"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field>
+            <input
+              class="full-width"
+              matInput
+              [(ngModel)]="currentCourse.description"
+              type="text"
+              name="title"
+              placeholder="description"
             />
           </mat-form-field>
         </mat-card-content>
         <mat-card-actions>
-          <!-- COURSE ACTIONS -->
+          <button
+            type="submit"
+            [disabled]="form.invalid"
+            mat-button
+            color="primary"
+          >
+            Submit
+          </button>
+          <button type="button" mat-button (click)="onCancel()">Cancel</button>
         </mat-card-actions>
       </form>
+      <pre>{{ form.value | json }}</pre>
+      <pre>{{ form.valid | json }}</pre>
     </mat-card>
   </div>
 </div>

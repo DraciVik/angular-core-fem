@@ -37,6 +37,7 @@ export class CoursesComponent implements OnInit {
     this.currentCourse = emptyCourse;
   }
   setCurrentCourse(course) {
+    console.log('SETTING', course);
     this.currentCourse = course;
   }
   onDeleteCourse(course) {
@@ -44,6 +45,13 @@ export class CoursesComponent implements OnInit {
     this.courses = this.courses.filter(item => item.id !== course.id);
   }
   ngOnInit(): void {
+    this.resetSelectedCourse();
+  }
+  onCancel() {
+    this.resetSelectedCourse();
+  }
+  saveCourse() {
+    console.log('SAVE COURSE');
   }
 
 }
